@@ -3,7 +3,7 @@ package pl.edu.pjwstk.jazz_s21165_nbp.entity;
 
 /* piersze klasy ktore tworzymy, wiemy jakie maja miec konstruktory poprzez transformacje json to pojo link:https://json2csharp.com/json-to-pojo?fbclid=IwAR18wGu4bkJJoyYO_1z_srqb1ARu5oJFXyCh_mxFAek3A4TaKvE5Rvyw6hU */
 
-public class Rate{
+public class Rate {
     private String currency;
     private String code;
     private double mid;

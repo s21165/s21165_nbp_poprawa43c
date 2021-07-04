@@ -25,29 +25,29 @@ public class TabelkiSerwis {
     }
 
 
-        public Tabelki dajTabelke (String waluta, String dataOd, String dataDo){
-            Root[] ulotneTabelki = restTemplate.getForObject("https://api.nbp.pl/api/exchangerates/tables/a/" + dataOd + "/" + dataDo + "/?format=json", Root[].class);
-            List<Rate> listaGotowa = new ArrayList<>();
+    public Tabelki dajTabelke(String waluta, String dataOd, String dataDo) {
+        Root[] ulotneTabelki = restTemplate.getForObject("https://api.nbp.pl/api/exchangerates/tables/a/" + dataOd + "/" + dataDo + "/?format=json", Root[].class);
+        List<Rate> listaGotowa = new ArrayList<>();
 
-            for (Root nbpRoot : ulotneTabelki) {
-                for (Rate rate : nbpRoot.getRates()) {
-                    if (rate.getCode() == waluta.toUpperCase(Locale.ROOT)) {
-                        listaGotowa.add(rate);
+        for (Root nbpRoot : ulotneTabelki) {
+            for (Rate rate : nbpRoot.getRates()) {
+                if (rate.getCode() == waluta.toUpperCase(Locale.ROOT)) {
+                    listaGotowa.add(rate);
 
-                    }
                 }
             }
-
-            LocalDate dataFormatowanaOd = LocalDate.parse(dataOd);    /* formatujemy date */
-            LocalDate dataFormatowanaDo = LocalDate.parse(dataDo);
-
-//String waluta, LocalDate dataOd, LocalDate dataDo, LocalDateTime godzinaSzukania
-            return (new Tabelki(waluta,dataFormatowanaOd,dataFormatowanaDo,LocalDateTime.now() ));
         }
+
+        LocalDate dataFormatowanaOd = LocalDate.parse(dataOd);    /* formatujemy date */
+        LocalDate dataFormatowanaDo = LocalDate.parse(dataDo);
+
+        /// do tabelek powinnienem zwrocic listaGotowa, ale bez relacji w bazie tego nie zapisze
+        return (new Tabelki(waluta, dataFormatowanaOd, dataFormatowanaDo, LocalDateTime.now()));
+    }
 
     public List<Tabelki> findAll() {
         return averageRepo.findAll();
     }
 
 
-    }
+}

@@ -4,11 +4,11 @@ package pl.edu.pjwstk.jazz_s21165_nbp.entity;
 
 import java.util.List;
 
-public class Root{
-   private String table;
-   private String no;
-   private String effectiveDate;
-   private List <Rate>rates;
+public class Root {
+    private String table;
+    private String no;
+    private String effectiveDate;
+    private List<Rate> rates;
 
 
     public Root(String table, String no, String effectiveDate, List<Rate> rates) {

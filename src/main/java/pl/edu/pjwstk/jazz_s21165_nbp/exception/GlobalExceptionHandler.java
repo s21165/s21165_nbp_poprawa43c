@@ -1,6 +1,5 @@
 package pl.edu.pjwstk.jazz_s21165_nbp.exception;
 
-import java.net.ConnectException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -8,6 +7,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
+
+import java.net.ConnectException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -23,11 +24,11 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(bodyOfResponse);
     }
 
-        @ExceptionHandler(HttpServerErrorException.InternalServerError.class)
-        public ResponseEntity<String> internalServerErrorHandler(HttpServerErrorException ex) {
-            String bodyOfResponse = ex.getResponseBodyAsString();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(bodyOfResponse);
-        }
+    @ExceptionHandler(HttpServerErrorException.InternalServerError.class)
+    public ResponseEntity<String> internalServerErrorHandler(HttpServerErrorException ex) {
+        String bodyOfResponse = ex.getResponseBodyAsString();
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(bodyOfResponse);
+    }
 
     @ResponseStatus(value = HttpStatus.GATEWAY_TIMEOUT, reason = "NBP service not responding")
     @ExceptionHandler(ConnectException.class)
