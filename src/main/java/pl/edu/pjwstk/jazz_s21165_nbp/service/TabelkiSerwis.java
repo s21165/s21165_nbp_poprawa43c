@@ -7,6 +7,8 @@ import pl.edu.pjwstk.jazz_s21165_nbp.entity.Root;
 import pl.edu.pjwstk.jazz_s21165_nbp.entity.Tabelki;
 import pl.edu.pjwstk.jazz_s21165_nbp.repository.PoprawaRepo;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -35,7 +37,12 @@ public class TabelkiSerwis {
                     }
                 }
             }
-            return (Tabelki) listaGotowa;
+
+            LocalDate dataFormatowanaOd = LocalDate.parse(dataOd);    /* formatujemy date */
+            LocalDate dataFormatowanaDo = LocalDate.parse(dataDo);
+
+//String waluta, LocalDate dataOd, LocalDate dataDo, LocalDateTime godzinaSzukania
+            return (new Tabelki(waluta,dataFormatowanaOd,dataFormatowanaDo,LocalDateTime.now() ));
         }
 
     public List<Tabelki> findAll() {

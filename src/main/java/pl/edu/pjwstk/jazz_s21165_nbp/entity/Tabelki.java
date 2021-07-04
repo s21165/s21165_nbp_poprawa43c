@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 /* https://api.nbp.pl/api/exchangerates/rates/a/USD/2012-01-01/2012-01-05/?format=json chcemy aby dane wartosci z api byli zmienniane wraz z zapytaniem */
@@ -22,13 +23,25 @@ public class Tabelki {
     @ApiModelProperty(notes = "data od kiedy liczymy")
     private LocalDate dataOd;
     @ApiModelProperty(notes = "data do kiedy liczymy")
-
+    private LocalDate dataDo;
+    @ApiModelProperty(notes = "kiedy zostalo wykonane zapytanie")
     private LocalDateTime godzinaSzukania;
-    @ApiModelProperty(notes = "srednia wyliczone z okreslonego przedzialu++")
-    private Double srednia;
+
+
+   /* @ApiModelProperty(notes = "srednia wyliczone z okreslonego przedzialu++")
+    private List<Rate> gotowa ;  /// pewno nie bd dzialac, potrzeba relacji
+
+    */
+
 
     public Tabelki() {
+    }
 
+    public Tabelki(String waluta, LocalDate dataOd, LocalDate dataDo, LocalDateTime godzinaSzukania) {
+        this.waluta = waluta;
+        this.dataOd = dataOd;
+        this.dataDo = dataDo;
+        this.godzinaSzukania = godzinaSzukania;
     }
 
     public Long getId() {
@@ -55,26 +68,19 @@ public class Tabelki {
         this.dataOd = dataOd;
     }
 
+    public LocalDate getDataDo() {
+        return dataDo;
+    }
+
+    public void setDataDo(LocalDate dataDo) {
+        this.dataDo = dataDo;
+    }
+
     public LocalDateTime getGodzinaSzukania() {
         return godzinaSzukania;
     }
 
     public void setGodzinaSzukania(LocalDateTime godzinaSzukania) {
         this.godzinaSzukania = godzinaSzukania;
-    }
-
-    public Double getSrednia() {
-        return srednia;
-    }
-
-    public void setSrednia(Double srednia) {
-        this.srednia = srednia;
-    }
-
-    public Tabelki(String waluta, LocalDate dataOd, LocalDateTime godzinaSzukania, Double srednia) {
-        this.waluta = waluta;
-        this.dataOd = dataOd;
-        this.godzinaSzukania = godzinaSzukania;
-        this.srednia = srednia;
     }
 }

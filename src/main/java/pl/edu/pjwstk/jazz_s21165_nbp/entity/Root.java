@@ -5,9 +5,21 @@ package pl.edu.pjwstk.jazz_s21165_nbp.entity;
 import java.util.List;
 
 public class Root{
-    public String table;
-    public String no;
-    public String effectiveDate;
+   private String table;
+   private String no;
+   private String effectiveDate;
+   private List <Rate>rates;
+
+
+    public Root(String table, String no, String effectiveDate, List<Rate> rates) {
+        this.table = table;
+        this.no = no;
+        this.effectiveDate = effectiveDate;
+        this.rates = rates;
+    }
+
+    public Root() {
+    }
 
     public String getTable() {
         return table;
@@ -40,17 +52,4 @@ public class Root{
     public void setRates(List<Rate> rates) {
         this.rates = rates;
     }
-
-    public Root(String table) {
-        this.table = table;
-    }
-
-    public Root(String table, String no, String effectiveDate, List<Rate> rates) {
-        this.table = table;
-        this.no = no;
-        this.effectiveDate = effectiveDate;
-        this.rates = rates;
-    }
-
-    public List<Rate> rates;
 }

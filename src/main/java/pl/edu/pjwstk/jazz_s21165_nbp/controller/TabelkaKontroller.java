@@ -1,5 +1,6 @@
 package pl.edu.pjwstk.jazz_s21165_nbp.controller;
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.edu.pjwstk.jazz_s21165_nbp.entity.Tabelki;
@@ -8,7 +9,11 @@ import pl.edu.pjwstk.jazz_s21165_nbp.service.TabelkiSerwis;
 import java.util.List;
 
 @RestController
+
+
 @RequestMapping("/api")
+
+
 public class TabelkaKontroller {
 
     private final TabelkiSerwis tabelkiSerwis;
@@ -17,7 +22,9 @@ public class TabelkaKontroller {
         this.tabelkiSerwis = tabelkiSerwis;
     }
 
-
+    @ApiOperation(value = "Get average exchange rate",
+            response = Tabelki.class,
+            notes = "This method will return average exchange rate in date range")
     @GetMapping("/{waluta}")
     public ResponseEntity<Tabelki> dajPieniadze(
 

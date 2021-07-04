@@ -38,7 +38,7 @@ public class Rate{
         this.mid = mid;
     }
 
-    public Rate(String currency) {
-        this.currency = currency;
+    public Rate() {
     }
 }
+
