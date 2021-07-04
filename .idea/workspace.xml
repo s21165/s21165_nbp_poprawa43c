@@ -77,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1625419958649</updated>
       <workItem from="1625419960003" duration="34000" />
-      <workItem from="1625420012785" duration="2976000" />
+      <workItem from="1625420012785" duration="3603000" />
     </task>
     <servers />
   </component>
@@ -94,5 +94,36 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/pjwstk/jazz_s21165_nbp/service/TabelkiSerwis.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/pjwstk/jazz_s21165_nbp/service/TabelkiSerwis.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/pjwstk/jazz_s21165_nbp/service/TabelkiSerwis.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/pjwstk/jazz_s21165_nbp/service/TabelkiSerwis.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/pjwstk/jazz_s21165_nbp/service/TabelkiSerwis.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

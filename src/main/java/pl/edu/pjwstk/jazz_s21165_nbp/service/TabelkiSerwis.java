@@ -22,10 +22,9 @@ public class TabelkiSerwis {
         this.averageRepo = averageRepo;
     }
 
-    /// https://api.nbp.pl/api/exchangerates/tables/a/2012-01-01/2012-01-03/?format=json
 
         public Tabelki dajTabelke (String waluta, String dataOd, String dataDo){
-            Root[] ulotneTabelki = restTemplate.getForObject(" https://api.nbp.pl/api/exchangerates/tables/a/" + dataOd + "/" + dataDo + "/?format=json", Root[].class);
+            Root[] ulotneTabelki = restTemplate.getForObject("https://api.nbp.pl/api/exchangerates/tables/a/" + dataOd + "/" + dataDo + "/?format=json", Root[].class);
             List<Rate> listaGotowa = new ArrayList<>();
 
             for (Root nbpRoot : ulotneTabelki) {
